@@ -1,5 +1,7 @@
-# Well, it works.
-
+"""A k-nearest neighbors (k=1) algorithm that works specifically with
+this Iris data set's format.
+(http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
+"""
 import math
 
 import numpy as np
@@ -29,8 +31,7 @@ def get_nearest_class(test_row, train):
 
 
 def main():
-    """Takes in the Iris data set 
-    (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
+    """Takes in the Iris data set
     and separates the data randomly into a training and a test set.
     Then runs a shoddy knn (k=1) algorithm on each entry in the test set
     against the training data.
