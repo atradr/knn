@@ -14,6 +14,10 @@ def calculate_distance(test_row, train_row):
 
 
 def get_nearest_class(test_row, train):
+    """Takes a row of data and finds the entry in the
+    training set which is closest to it and returns
+    that target.
+    """
     distance = calculate_distance(test_row, train[0])
     nearest = train[0][4]
     for row in train:
@@ -25,6 +29,7 @@ def get_nearest_class(test_row, train):
 
 
 def main():
+    """Main program."""
     data = np.genfromtxt('iris.data.txt', delimiter=',', dtype=None)
 
     np.random.shuffle(data)
@@ -37,7 +42,7 @@ def main():
         nearest = get_nearest_class(row, train)
         if row[4] == nearest:
             num_correct += 1
-    print(num_correct)
+    print("Proportion correct: " + str((num_correct/len(test))))
 
 
 if __name__ == '__main__':
