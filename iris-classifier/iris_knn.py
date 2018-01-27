@@ -31,9 +31,9 @@ def get_nearest_class(test_row, train):
 
 
 def main():
-    """Takes in the Iris data set
-    and separates the data randomly into a training and a test set.
-    Then runs a shoddy knn (k=1) algorithm on each entry in the test set
+    """Takes in the Iris data set and separates the data r
+    andomly into a training and a test set. Then runs a shoddy 
+    knn (k=1) algorithm on each entry in the test set
     against the training data.
     """
     data = np.genfromtxt('iris.data.txt', delimiter=',', dtype=None)
