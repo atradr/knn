@@ -6,11 +6,8 @@ import numpy as np
 
 
 def calculate_distance(test_row, train_row):
-    """ Returns the distance between two vectors.
-    """
+    """ Returns the distance between two vectors."""
     element_sums = 0
-    # The -1 deals with the class name being last element.
-    # Need to change that.
     for i in range(len(test_row) - 1):
         element_sums += (test_row[i] - train_row[i])**2
     return math.sqrt(element_sums)
