@@ -29,17 +29,18 @@ def get_nearest_class(test_row, train):
 
 
 def main():
-    """Takes in the Iris data set (http://archive.ics.uci.edu/ml/datasets/Iris)
+    """Takes in the Iris data set 
+    (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
     and separates the data randomly into a training and a test set.
-    Then runs a shoddy knn algorithm on each entry in the test set
+    Then runs a shoddy knn (k=1) algorithm on each entry in the test set
     against the training data.
     """
     data = np.genfromtxt('iris.data.txt', delimiter=',', dtype=None)
 
     np.random.shuffle(data)
 
-    train = data[0:125]
-    test = data[125:]
+    train = data[0:100]
+    test = data[100:]
 
     num_correct = 0
     for row in test:
