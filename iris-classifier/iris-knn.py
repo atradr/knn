@@ -16,7 +16,7 @@ def calculate_distance(test_row, train_row):
 def get_nearest_class(test_row, train):
     """Takes a row of data and finds the entry in the
     training set which is closest to it and returns
-    that target.
+    that entry's target.
     """
     distance = calculate_distance(test_row, train[0])
     nearest = train[0][4]
@@ -29,7 +29,11 @@ def get_nearest_class(test_row, train):
 
 
 def main():
-    """Main program."""
+    """Takes in the Iris data set (http://archive.ics.uci.edu/ml/datasets/Iris)
+    and separates the data randomly into a training and a test set.
+    Then runs a shoddy knn algorithm on each entry in the test set
+    against the training data.
+    """
     data = np.genfromtxt('iris.data.txt', delimiter=',', dtype=None)
 
     np.random.shuffle(data)
